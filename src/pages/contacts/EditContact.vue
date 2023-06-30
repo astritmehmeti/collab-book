@@ -250,24 +250,27 @@ export default {
       }
     },
     submitForm() {
-      this.showModal = true;
+      // this.showModal = true;
       this.formValidation();
       if (!this.formIsValid) return;
-
-      const formData = {
-        id: this.id,
-        firstName: this.firstName.value,
-        lastName: this.lastName.value,
-        email: this.email.value,
-        phone: this.phone.value,
-        position: this.position.value,
-        selectedCity: this.selectedCity.value,
-        birthDate: this.birthDate.value,
-        additionalInformation: this.additionalInformation.value,
-      };
-      this.$store.dispatch("contacts/editContact", formData);
-      this.showModal = false;
-      this.$router.replace("/contacts");
+      try {
+        const formData = {
+          id: this.id,
+          firstName: this.firstName.value,
+          lastName: this.lastName.value,
+          email: this.email.value,
+          phone: this.phone.value,
+          position: this.position.value,
+          selectedCity: this.selectedCity.value,
+          birthDate: this.birthDate.value,
+          additionalInformation: this.additionalInformation.value,
+        };
+        this.$store.dispatch("contacts/editContact", formData);
+        this.showModal = false;
+        this.$router.replace("/contacts");
+      } catch (error) {
+        alert(error.message);
+      }
     },
     clearValidity(input) {
       this[input].isValid = true;

@@ -6,7 +6,7 @@
     <div
       v-if="archivedContacts.length > 0"
       class="d-flex justify-content-between"
-      style="padding-top: 7rem"
+      style="padding-top: 5px"
     >
       <div class="d-flex w-75" style="margin-left: -32px">
         <input

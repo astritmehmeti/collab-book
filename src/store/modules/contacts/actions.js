@@ -54,6 +54,7 @@ export default {
     setTimeout(() => {
       context.commit("clearMessage");
     }, 5000);
+    throw new Error("Duke e simuluar nje gabim ne rrjete apo gjetiu...");
   },
 
   deleteContact(context, payload) {

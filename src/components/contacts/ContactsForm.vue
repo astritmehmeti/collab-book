@@ -16,7 +16,12 @@
                     v-model.trim="firstName.value"
                     @blur="clearValidity('firstName')"
                   />
-                  <p v-if="!firstName.isValid">Please enter First Name</p>
+                  <p
+                    class="d-flex justify-content-start"
+                    v-if="!firstName.isValid"
+                  >
+                    Please enter First Name
+                  </p>
                 </div>
               </div>
               <div class="col">
